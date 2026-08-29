@@ -87,7 +87,7 @@ export const DashboardPage: React.FC = () => {
       </div>
 
       {/* Quick URL Scanner Banner */}
-      <div className="cyber-card p-6 border-cyan-500/30 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-cyan-950/20">
+      <div className="cyber-card p-6 border-cyan-500/30 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-cyan-950/20 space-y-4">
         <form onSubmit={handleQuickScan} className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
@@ -107,6 +107,29 @@ export const DashboardPage: React.FC = () => {
             Analyze URL
           </button>
         </form>
+
+        {/* Quick Demo URL Shortcuts for Evaluators */}
+        <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-800/80">
+          <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+            Quick 1-Click Samples:
+          </span>
+          {[
+            { label: 'PayPal Spoof', url: 'http://paypal-security-update-account.com/login', color: 'border-rose-500/30 text-rose-300' },
+            { label: 'IP Stealer', url: 'http://192.168.1.105/verify-password.php', color: 'border-rose-500/30 text-rose-300' },
+            { label: 'DGA Malware', url: 'https://xk98qwz71mnpl0a8s7d6f5.biz/auth/gate', color: 'border-rose-500/30 text-rose-300' },
+            { label: 'Legitimate Google', url: 'https://www.google.com/search?q=cybersecurity', color: 'border-emerald-500/30 text-emerald-300' },
+            { label: 'Legitimate GitHub', url: 'https://github.com/login', color: 'border-emerald-500/30 text-emerald-300' },
+          ].map((item) => (
+            <button
+              key={item.label}
+              type="button"
+              onClick={() => navigate('/scanner', { state: { targetUrl: item.url } })}
+              className={`px-2 py-1 rounded-md bg-slate-900/80 border ${item.color} text-[10px] font-mono hover:scale-105 transition-all`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Top 6 KPI Metric Cards */}
