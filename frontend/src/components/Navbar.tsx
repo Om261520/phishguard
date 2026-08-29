@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Shield, Activity, User, LogOut, Search, Award, Sparkles } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
 import { RecruiterTourModal } from './RecruiterTourModal';
+import { PhishGuardLogo } from './PhishGuardLogo';
 
 export const Navbar: React.FC = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -14,13 +15,11 @@ export const Navbar: React.FC = () => {
       <header className="h-16 border-b border-slate-800 bg-[#0c121e]/80 backdrop-blur-md sticky top-0 z-40 px-4 lg:px-8 flex items-center justify-between">
         {/* Brand Identity */}
         <div className="flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="p-2 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-slate-950 shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-              <Shield className="w-5 h-5 font-black" />
-            </div>
+          <Link to="/" className="flex items-center gap-3 group">
+            <PhishGuardLogo size="md" />
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-lg tracking-tight text-white">
+                <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-cyan-300 transition-colors">
                   Phish<span className="text-cyan-400">Guard</span>
                 </span>
                 <span className="text-[10px] font-mono uppercase px-1.5 py-0.2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded font-bold">

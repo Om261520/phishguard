@@ -18,6 +18,8 @@ import {
   FileCheck,
 } from 'lucide-react';
 
+import { PhishGuardLogo } from './PhishGuardLogo';
+
 interface RecruiterTourModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -32,9 +34,7 @@ export const RecruiterTourModal: React.FC<RecruiterTourModalProps> = ({ isOpen, 
         {/* Modal Header */}
         <div className="p-6 bg-gradient-to-r from-slate-900 via-slate-900 to-cyan-950/40 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-slate-950 shadow-lg shadow-cyan-500/20">
-              <Award className="w-6 h-6 font-black" />
-            </div>
+            <PhishGuardLogo size="lg" />
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg sm:text-xl font-extrabold text-white">

@@ -11,6 +11,8 @@ import {
   Check,
 } from 'lucide-react';
 
+import { PhishGuardLogo } from '../components/PhishGuardLogo';
+
 const DEMO_ACCOUNTS = [
   { role: 'Admin', username: 'admin', pass: 'Admin@123', desc: 'Full System Control & User Management' },
   { role: 'Analyst', username: 'analyst', pass: 'Analyst@123', desc: 'Scan URLs, Triage Incidents & Add Notes' },
@@ -22,8 +24,8 @@ export const LoginPage: React.FC = () => {
   const { login } = useAuth();
   const [username, setUsername] = useState('analyst');
   const [password, setPassword] = useState('Analyst@123');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>('');
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,9 +56,9 @@ export const LoginPage: React.FC = () => {
     <div className="min-h-screen bg-[#090d16] flex items-center justify-center p-4">
       <div className="max-w-md w-full space-y-6">
         {/* Brand Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-slate-950 shadow-xl shadow-cyan-500/20 mb-2">
-            <Shield className="w-8 h-8 font-black" />
+        <div className="text-center space-y-3">
+          <div className="inline-flex justify-center mb-1">
+            <PhishGuardLogo size="xl" showGlow={true} />
           </div>
           <h1 className="text-2xl font-extrabold text-white tracking-tight">
             Phish<span className="text-cyan-400">Guard</span> SOC Portal
