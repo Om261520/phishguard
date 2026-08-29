@@ -72,12 +72,13 @@ if os.path.exists(assets_dir):
 
 if os.path.exists(frontend_dist):
     from fastapi.responses import FileResponse
+    from fastapi import HTTPException
 
     @app.get("/{full_path:path}")
     async def serve_spa(full_path: str):
-        # Don't intercept API routes or Docs
-        if full_path.startswith("api/") or full_path in ["docs", "redoc", "openapi.json"]:
-            return None
+        # Pass 404 for unmatched API routes or docs so they aren't swallowed
+        if full_path.startswith("api/") or full_path in ["api", "docs", "redoc", "openapi.json"]:
+            raise HTTPException(status_code=404, detail="API endpoint not found")
         file_path = os.path.join(frontend_dist, full_path)
         if os.path.exists(file_path) and os.path.isfile(file_path):
             return FileResponse(file_path)

@@ -2,12 +2,16 @@
 
 ### AI-Powered Phishing URL Detection & Security Analysis Platform
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Online-00E5FF.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://solid-ways-smoke.loca.lt)
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React 18](https://img.shields.io/badge/Frontend-React_18_TypeScript-61DAFB.svg?logo=react&logoColor=black)](https://react.dev)
 [![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-F7931E.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Tests](https://img.shields.io/badge/Tests-24%20Passing-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+> 🚀 **Live Demo URL:** [https://solid-ways-smoke.loca.lt](https://solid-ways-smoke.loca.lt)  
+> *(If prompted for Tunnel Password / Endpoint IP, enter: `103.68.11.146`)*
 
 ---
 
