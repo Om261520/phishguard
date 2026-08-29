@@ -62,6 +62,7 @@ app.include_router(notes.router, prefix=settings.API_V1_STR)
 app.include_router(threat_intel.router, prefix=settings.API_V1_STR)
 app.include_router(reports.router, prefix=settings.API_V1_STR)
 app.include_router(health.router, prefix=settings.API_V1_STR)
+app.include_router(health.router, prefix="/api/v1")
 
 # Serve Frontend SPA Static Assets in Production Mode
 frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../frontend/dist"))

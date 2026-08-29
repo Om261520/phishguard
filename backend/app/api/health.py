@@ -14,6 +14,7 @@ APP_START_TIME = time.time()
 
 
 @router.get("", response_model=SystemHealthResponse)
+@router.get("/", response_model=SystemHealthResponse)
 def get_system_health(db: Session = Depends(get_db)):
     """Comprehensive system health monitoring across all subsystems."""
     services = {}
