@@ -68,6 +68,25 @@ export const LoginPage: React.FC = () => {
 
         {/* Login Box */}
         <div className="cyber-card p-6 sm:p-8 space-y-6 border-slate-800">
+          {/* Instant Access Banner */}
+          <button
+            type="button"
+            onClick={() => {
+              login('analyst', 'Analyst@123').then(() => navigate('/'));
+            }}
+            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 hover:from-cyan-500/30 hover:via-blue-500/30 hover:to-purple-500/30 border border-cyan-500/50 text-cyan-300 font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/10 transition-all hover:scale-[1.01]"
+          >
+            <Shield className="w-4 h-4 text-cyan-400" />
+            <span>⚡ Instant Guest Access (1-Click Enter)</span>
+            <ArrowRight className="w-4 h-4 text-cyan-400" />
+          </button>
+
+          <div className="relative flex py-1 items-center">
+            <div className="flex-grow border-t border-slate-800"></div>
+            <span className="flex-shrink mx-4 text-[10px] font-mono text-slate-500 uppercase">or sign in with credentials</span>
+            <div className="flex-grow border-t border-slate-800"></div>
+          </div>
+
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-1.5">
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
